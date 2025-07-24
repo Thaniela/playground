@@ -992,3 +992,90 @@ footer .links a:hover {
 #main-part .mdl-slider.is-upgraded:focus:not(:active)::-webkit-slider-thumb {
   box-shadow: 0 0 0 10px rgba(0,0,0, 0.12);
 }
+
+/* --- Updated Tooltip and Control Styles --- */
+
+/* [FIX 1] Makes the "Epoch" number appear below its label */
+#top-controls .control .value {
+  display: block;
+}
+
+/* Styles for the label to ensure icon aligns properly */
+#top-controls .control .label,
+#top-controls .control label {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* [FIX 3] Allows the tooltip to display outside the top bar's boundaries */
+#top-controls {
+  overflow: visible;
+}
+
+/* The tooltip icon container */
+.tooltip-icon {
+  position: relative; /* Required for tooltip positioning */
+  margin-left: 5px;
+  /* [FIX 2] Made icon smaller and lighter */
+  font-size: 16px;
+  color: #bbb;
+  cursor: help;
+}
+
+/* The main tooltip box, created with a pseudo-element */
+.tooltip-icon::after {
+  content: attr(data-tooltip); /* Gets text from the data-tooltip attribute */
+  position: absolute;
+  /* [FIX 3] Increased z-index to ensure it appears on top */
+  z-index: 100;
+  bottom: 125%; /* Position above the icon */
+  left: 50%;
+  transform: translateX(-50%); /* Horizontally center the tooltip */
+
+  /* Visual styling */
+  width: 200px; /* Tooltip width */
+  background-color: #333;
+  color: #fff;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: none; /* Ensures text is not all caps */
+  padding: 8px 10px;
+  border-radius: 6px;
+
+  /* Hide by default */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+/* The arrow pointing to the icon */
+.tooltip-icon::before {
+  content: '';
+  position: absolute;
+  /* [FIX 3] Increased z-index to ensure it appears on top */
+  z-index: 100;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: -10px; /* Sits between the icon and the tooltip box */
+
+  /* Creates the triangle */
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+
+  /* Hide by default */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+/* Show the tooltip and arrow on hover */
+.tooltip-icon:hover::after,
+.tooltip-icon:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
