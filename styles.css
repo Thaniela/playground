@@ -997,6 +997,7 @@ footer .links a:hover {
 
 /* Makes the "Epoch" number appear below its label */
 #top-controls .control .value {
+  margin-top: 5px;
   display: block;
 }
 
