@@ -510,11 +510,9 @@ g.column rect {
 }
 
 .data.column p.slider {
-.data.column p.slider {
   margin: 0 -25px 20px;
 }
 
-.basic-button {
 .basic-button {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   margin-top: 25px;
