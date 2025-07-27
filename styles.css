@@ -163,7 +163,10 @@ header {
   color: white;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  position: relative;
+  position: sticky;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
 }
 
 header h1 {
@@ -1038,9 +1041,9 @@ footer .links a:hover {
 /* Sidebar styles */
 #top-controls {
   flex: 0 0 200px; /* Do not grow, do not shrink, base width of 260px */
-  height: 100vh; /* Full viewport height */
+  height: calc(100vh-96.25px); /* Full viewport height */
   position: sticky; /* Stick to the top of the viewport on scroll */
-  top: 0;
+  top: 96.25px;
   border-bottom: none; /* Remove original bottom border */
   border-right: 1px solid #ddd; /* Add a right border to separate from content */
   box-shadow: none; /* Remove original shadow */
