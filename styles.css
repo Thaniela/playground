@@ -499,18 +499,18 @@ g.column rect {
   background-color: white;
 }
 
-#main-part .data.column .dataset .label {
+.data.column .dataset .label {
   position: absolute;
   left: 48px;
   top: calc(50% - 9px);
   display: none;
 }
 
-#main-part .data.column p.slider {
+.data.column p.slider {
   margin: 0 -25px 20px;
 }
 
-#main-part .basic-button {
+.basic-button {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   margin-top: 25px;
   height: 34px;
@@ -530,17 +530,17 @@ g.column rect {
   cursor: pointer;
 }
 
-#main-part .basic-button:hover {
+.basic-button:hover {
   background: #2d8ae7;
   color: rgba(255, 255, 255, 0.97);
 }
 
-#main-part .basic-button:focus {
+.basic-button:focus {
   background: #2d8ae7;
   color: rgba(255, 255, 255, 0.97);
 }
 
-#main-part .basic-button:active {
+.basic-button:active {
   background:#1f7ddb;
   color: rgba(255, 255, 255, 0.97);
 }
@@ -1041,4 +1041,39 @@ footer .links a:hover {
 .tooltip-icon:hover::before {
   opacity: 1;
   visibility: visible;
+}
+
+/* --- My new styles for the data card --- */
+
+/* Overrides default column behavior to create a card-like container */
+.data.column {
+  width: auto; /* Remove fixed percentage width */
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 30px; /* Add space between this card and the features section */
+}
+
+/* Container for the two-column layout */
+.mine-data-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Defines the left column (datasets) */
+.mine-data-left {
+  flex-basis: 45%;
+}
+
+/* Defines the right column (configurations) */
+.mine-data-right {
+  flex-basis: 45%;
+}
+
+/* Minor adjustment for the sliders within the new layout */
+#main-part .data.column p.slider {
+    margin: 0 0 20px 0;
 }
