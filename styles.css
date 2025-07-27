@@ -977,14 +977,16 @@ footer .links a:hover {
 .tooltip-icon::after {
   content: attr(data-tooltip);
   position: absolute;
-  /* Increased z-index to ensure it appears on top */
-  z-index: 100;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-50%);
+  z-index: 1000;
+  
+  /* Position to the right of the icon */
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  margin-left: 10px; /* Space between arrow and tooltip box */
 
   /* Visual styling */
-  width: 200px;
+  width: 150px;
   background-color: #333;
   color: #fff;
   font-family: "Helvetica", "Arial", sans-serif;
@@ -995,7 +997,6 @@ footer .links a:hover {
   text-transform: none;
   padding: 8px 10px;
   border-radius: 6px;
-  /* Explicitly allow text to wrap to multiple lines */
   white-space: normal;
 
   /* Hide by default */
@@ -1008,16 +1009,17 @@ footer .links a:hover {
 .tooltip-icon::before {
   content: '';
   position: absolute;
-  z-index: 100;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: -10px;
+  z-index: 1000;
 
-  /* Creates the triangle */
+  /* Position between the icon and the tooltip box */
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  
+  /* Creates the triangle pointing left */
   border-width: 5px;
   border-style: solid;
-  border-color: #333 transparent transparent transparent;
+  border-color: transparent #333 transparent transparent;
 
   /* Hide by default */
   opacity: 0;
