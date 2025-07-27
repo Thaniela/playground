@@ -154,51 +154,57 @@ limitations under the License.
         <h4>
           <span>Data</span>
         </h4>
-        <div class="ui-dataset">
-          <p>Which dataset do you want to use?</p>
-          <div class="dataset-list">
-            <div class="dataset" title="Circle">
-              <canvas class="data-thumbnail" data-dataset="circle"></canvas>
-            </div>
-            <div class="dataset" title="Exclusive or">
-              <canvas class="data-thumbnail" data-dataset="xor"></canvas>
-            </div>
-            <div class="dataset" title="Gaussian">
-              <canvas class="data-thumbnail" data-dataset="gauss"></canvas>
-            </div>
-            <div class="dataset" title="Spiral">
-              <canvas class="data-thumbnail" data-dataset="spiral"></canvas>
-            </div>
-            <div class="dataset" title="Plane">
-              <canvas class="data-thumbnail" data-regDataset="reg-plane"></canvas>
-            </div>
-            <div class="dataset" title="Multi gaussian">
-              <canvas class="data-thumbnail" data-regDataset="reg-gauss"></canvas>
+        <div class="mine-data-card">
+          <div class="mine-data-left">
+            <div class="ui-dataset">
+              <p>Which dataset do you want to use?</p>
+              <div class="dataset-list">
+                <div class="dataset" title="Circle">
+                  <canvas class="data-thumbnail" data-dataset="circle"></canvas>
+                </div>
+                <div class="dataset" title="Exclusive or">
+                  <canvas class="data-thumbnail" data-dataset="xor"></canvas>
+                </div>
+                <div class="dataset" title="Gaussian">
+                  <canvas class="data-thumbnail" data-dataset="gauss"></canvas>
+                </div>
+                <div class="dataset" title="Spiral">
+                  <canvas class="data-thumbnail" data-dataset="spiral"></canvas>
+                </div>
+                <div class="dataset" title="Plane">
+                  <canvas class="data-thumbnail" data-regDataset="reg-plane"></canvas>
+                </div>
+                <div class="dataset" title="Multi gaussian">
+                  <canvas class="data-thumbnail" data-regDataset="reg-gauss"></canvas>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div>
-          <div class="ui-percTrainData">
-            <label for="percTrainData">Ratio of training to test data:&nbsp;&nbsp;<span class="value">XX</span>%</label>
-            <p class="slider">
-              <input class="mdl-slider mdl-js-slider" type="range" id="percTrainData" min="10" max="90" step="10">
-            </p>
+          <div class="mine-data-right">
+            <div>
+              <div class="ui-percTrainData">
+                <label for="percTrainData">Ratio of training to test data:  <span class="value">XX</span>%</label>
+                <p class="slider">
+                  <input class="mdl-slider mdl-js-slider" type="range" id="percTrainData" min="10" max="90" step="10">
+                </p>
+              </div>
+              <div class="ui-noise">
+                <label for="noise">Noise:  <span class="value">XX</span></label>
+                <p class="slider">
+                  <input class="mdl-slider mdl-js-slider" type="range" id="noise" min="0" max="50" step="5">
+                </p>
+              </div>
+              <div class="ui-batchSize">
+                <label for="batchSize">Batch size:  <span class="value">XX</span></label>
+                <p class="slider">
+                  <input class="mdl-slider mdl-js-slider" type="range" id="batchSize" min="1" max="30" step="1">
+                </p>
+              </div>
+                <button class="basic-button" id="data-regen-button" title="Regenerate data">
+                  Regenerate
+                </button>
+            </div>
           </div>
-          <div class="ui-noise">
-            <label for="noise">Noise:&nbsp;&nbsp;<span class="value">XX</span></label>
-            <p class="slider">
-              <input class="mdl-slider mdl-js-slider" type="range" id="noise" min="0" max="50" step="5">
-            </p>
-          </div>
-          <div class="ui-batchSize">
-            <label for="batchSize">Batch size:&nbsp;&nbsp;<span class="value">XX</span></label>
-            <p class="slider">
-              <input class="mdl-slider mdl-js-slider" type="range" id="batchSize" min="1" max="30" step="1">
-            </p>
-          </div>
-            <button class="basic-button" id="data-regen-button" title="Regenerate data">
-              Regenerate
-            </button>
         </div>
       </div>
     <div id="main-part" class="l--page">

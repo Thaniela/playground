@@ -1102,3 +1102,63 @@ footer .links a:hover {
   font-size: 45px; /* Make values like the epoch number stand out */
   margin-bottom: 9px;
 }
+
+/* CSS Changes */
+#mine-main-content .column.data h4 {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    
+}
+/* --- Data Column Card Layout --- */
+.mine-data-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /*border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);*/
+  margin-top: 10px;
+}
+
+.mine-data-left {
+  flex-basis: 48%;
+  padding-right: 15px;
+  border-right: 1px solid #eee;
+}
+
+.mine-data-right {
+  flex-basis: 48%;
+  padding-left: 15px;
+}
+
+/* Adjust original data column to fit the new card layout */
+.data.column {
+  width: 60%; /* Increased width to accommodate the two columns */
+  margin-left: 35px;
+}
+
+
+/* Tweak the width of the dataset list to better fit the column */
+.data.column .dataset-list {
+  width: 100%;
+}
+
+/* Remove margin from individual datasets as the flexbox handles spacing */
+.data.column .dataset {
+  margin-right: 10px;
+}
+
+.data.column .dataset:nth-of-type(2n) {
+  margin-right: 10px;
+}
+
+.data.column .dataset:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+#main-part .data.column p.slider {
+  margin: 0 0 20px 0; /* Remove negative margin */
+}
