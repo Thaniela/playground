@@ -1125,7 +1125,7 @@ input[type="range"]::-moz-range-thumb {
   flex: 1 1 auto; /* Allow this container to grow and shrink */
   width: calc(100% - 200px); /* Take up remaining space */
   height: auto;
-  overflow-y: auto; /* Allow main content to scroll independently */
+  overflow-y: visible; /* Remove scrollbar from main content */
 }
 
 /* Adjust the main content's inner containers to not have a conflicting margin */
