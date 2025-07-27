@@ -159,7 +159,7 @@ body {
 /* Header */
 
 header {
-  background-color: #2E86DE;
+  background-color: #E78AC3;
   color: white;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
@@ -352,10 +352,10 @@ header h1 .optional {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
+  gap: 100px;
   margin-top: 30px;
   margin-bottom: 50px;
+  margin-left: 70px;
   padding-top: 2px;
   position: relative;
 }
@@ -513,7 +513,7 @@ g.column rect {
   display: block;
   color: rgb(255, 255, 255);
   border: none;
-  background: #2E86DE;
+  background: #E78AC3;
   border-radius: 3px;
   padding: 5px;
   font-size: 12px;
@@ -525,12 +525,12 @@ g.column rect {
 }
 
 .basic-button:hover {
-  background: #1678d9;
+  background: #e75eb3;
   color: rgb(255, 255, 255);
 }
 
 .basic-button:active {
-  background: #2E86DE;
+  background: #e75eb3;
   color: rgba(255, 255, 255);
 }
 
@@ -884,7 +884,7 @@ footer .links a:hover {
 .mdl-button--fab.mdl-button--colored:active,
 .mdl-button--fab.mdl-button--colored:focus,
 .mdl-button--fab.mdl-button--colored:focus:not(:active) {
-    background: #2E86DE;
+    background: #E78AC3;
 }
 
 /* Checkbox */
@@ -894,53 +894,111 @@ footer .links a:hover {
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
-  background-color: #2E86DE;
+  background-color: #E78AC3;
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
-  background-color: #2E86DE;
+  background-color: #E78AC3;
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__box-outline {
-  border-color: #2E86DE;
+  border-color: #E78AC3;
 }
 
 .mdl-checkbox__ripple-container .mdl-ripple {
-  background-color: #2E86DE;
+  background-color: #E78AC3;
 }
 
 /* Slider */
 
 #main-part .mdl-slider.is-upgraded {
-  color: #2E86DE;
+  color: #E78AC3 !important;
 }
 
 #main-part .mdl-slider__background-lower {
-  background-color: #2E86DE;
+  background-color: #E78AC3 !important;
 }
 
 #main-part .mdl-slider.is-upgraded::-webkit-slider-thumb {
-  background-color: #2E86DE;
+  background-color: #E78AC3 !important;
+  border: 2px solid #E78AC3 !important;
 }
 
 #main-part .mdl-slider.is-upgraded::-moz-range-thumb {
-  background-color: #2E86DE;
+  background-color: #E78AC3 !important;
+  border: 2px solid #E78AC3 !important;
 }
 
 #main-part .mdl-slider.is-upgraded::-ms-thumb {
-  background-color: #2E86DE;
+  background-color: #E78AC3 !important;
+  border: 2px solid #E78AC3 !important;
 }
 
 #main-part .mdl-slider.is-upgraded.is-lowest-value::-webkit-slider-thumb {
-  border-color: #2E86DE;
+  border-color: #E78AC3 !important;
+  background-color: #E78AC3 !important;
 }
 
 #main-part .mdl-slider.is-upgraded.is-lowest-value::-moz-range-thumb {
-  border-color: #2E86DE;
+  border-color: #E78AC3 !important;
+  background-color: #E78AC3 !important;
 }
-/* Keep grey focus circle for non-start values */
+
+/* Additional slider track styling */
+#main-part .mdl-slider__background-upper {
+  background-color: rgba(231, 138, 195, 0.2) !important;
+}
+
+/* Slider container styling */
+#main-part .mdl-slider {
+  background-color: rgba(231, 138, 195, 0.2) !important;
+}
+
+/* Focus state for slider thumb */
 #main-part .mdl-slider.is-upgraded:focus:not(:active)::-webkit-slider-thumb {
-  box-shadow: 0 0 0 10px rgba(0,0,0, 0.12);
+  box-shadow: 0 0 0 10px rgba(231, 138, 195, 0.2) !important;
+}
+
+#main-part .mdl-slider.is-upgraded:focus:not(:active)::-moz-range-thumb {
+  box-shadow: 0 0 0 10px rgba(231, 138, 195, 0.2) !important;
+}
+
+/* Additional Material Design Lite overrides for sliders */
+.mdl-slider.is-upgraded {
+  color: #E78AC3 !important;
+}
+
+.mdl-slider__background-lower {
+  background: #E78AC3 !important;
+}
+
+.mdl-slider.is-upgraded::-webkit-slider-thumb {
+  background: #E78AC3 !important;
+}
+
+.mdl-slider.is-upgraded::-moz-range-thumb {
+  background: #E78AC3 !important;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background-color: #E78AC3 !important;
+  border: 2px solid #E78AC3 !important;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background-color: #E78AC3 !important;
+  border: 2px solid #E78AC3 !important;
+}
+
+/* Override any blue colors from MDL */
+.mdl-slider.is-upgraded.is-lowest-value::-webkit-slider-thumb {
+  border: 2px solid #E78AC3 !important;
+  background: transparent !important;
+}
+
+.mdl-slider.is-upgraded.is-lowest-value::-moz-range-thumb {
+  border: 2px solid #E78AC3 !important;
+  background: transparent !important;
 }
 
 /* --- Final Tooltip and Control Styles --- */
@@ -1066,7 +1124,7 @@ footer .links a:hover {
 #mine-main-content #main-part,
 #mine-main-content #article-text,
 #mine-main-content footer {
-  margin-left: 0;
+  margin-left: 100px;
 }
 
 /* --- Sidebar Control Adjustments --- */
@@ -1142,7 +1200,7 @@ footer .links a:hover {
 /* Adjust original data column to fit the new card layout */
 .data.column {
   width: 60%; /* Increased width to accommodate the two columns */
-  margin-left: 35px;
+  margin-left: 100px;
 }
 
 
@@ -1166,4 +1224,141 @@ footer .links a:hover {
 
 #main-part .data.column p.slider {
   margin: 0 0 20px 0; /* Remove negative margin */
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: 2% auto;
+  padding: 0;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  background: linear-gradient(135deg, #E78AC3, #A6D854);
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.close {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+}
+
+.modal-body {
+  padding: 25px;
+  text-align: center;
+  overflow-y: auto;
+  max-height: calc(90vh - 120px);
+}
+
+#heatmap-enlarged {
+  margin: 0 auto 20px;
+  display: inline-block;
+  cursor: default;
+}
+
+.modal-legend {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.legend-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 300;
+}
+
+#colormap-modal {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+/* Make original heatmap clickable */
+#heatmap {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#heatmap:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive modal */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    margin: 5% auto;
+    max-height: 85vh;
+  }
+  
+  .modal-header {
+    padding: 15px 20px;
+  }
+  
+  .modal-header h3 {
+    font-size: 18px;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
 }

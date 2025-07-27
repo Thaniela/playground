@@ -163,7 +163,7 @@ let linkWidthScale = d3.scale.linear()
   .clamp(true);
 let colorScale = d3.scale.linear<string, number>()
                      .domain([-1, 0, 1])
-                     .range(["#f59322", "#e8eaeb", "#0877bd"])
+                     .range(["#E78AC3", "#e8eaeb", "#A6D854"])
                      .clamp(true);
 let iter = 0;
 let trainData: Example2D[] = [];
@@ -374,6 +374,9 @@ function makeGUI() {
     .attr("transform", "translate(0,10)")
     .call(xAxis);
 
+  // Setup heatmap modal functionality
+  setupHeatmapModal();
+
   // Listen for css-responsive changes and redraw the svg network.
 
   window.addEventListener("resize", () => {
@@ -392,6 +395,78 @@ function makeGUI() {
     d3.select("div.more").style("display", "none");
     d3.select("header").style("display", "none");
   }
+}
+
+let enlargedHeatMap: HeatMap = null;
+
+function setupHeatmapModal() {
+  // Get modal elements
+  let modal = d3.select("#heatmap-modal");
+  let closeBtn = modal.select(".close");
+  let heatmapElement = d3.select("#heatmap");
+  
+  // Make heatmap clickable
+  heatmapElement.on("click", () => {
+    openHeatmapModal();
+  });
+
+  // Close modal when clicking the X
+  closeBtn.on("click", () => {
+    closeHeatmapModal();
+  });
+
+  // Close modal when clicking outside
+  modal.on("click", function() {
+    if ((d3.event as any).target === this) {
+      closeHeatmapModal();
+    }
+  });
+
+  // Close modal with ESC key
+  d3.select(document).on("keydown.modal", () => {
+    if ((d3.event as any).keyCode === 27) { // ESC key
+      closeHeatmapModal();
+    }
+  });
+}
+
+function openHeatmapModal() {
+  let modal = d3.select("#heatmap-modal");
+  let enlargedContainer = d3.select("#heatmap-enlarged");
+  
+  // Clear any existing content
+  enlargedContainer.selectAll("*").remove();
+  
+  // Create enlarged heatmap (600px instead of 300px)
+  let xDomain: [number, number] = [-6, 6];
+  enlargedHeatMap = new HeatMap(600, DENSITY, xDomain, xDomain, enlargedContainer, {showAxes: true});
+  
+  // Update with current data
+  if (network) {
+    let selectedId = selectedNodeId != null ? selectedNodeId : nn.getOutputNode(network).id;
+    enlargedHeatMap.updateBackground(boundary[selectedId], state.discretize);
+    enlargedHeatMap.updatePoints(trainData);
+    enlargedHeatMap.updateTestPoints(state.showTestData ? testData : []);
+  }
+  
+  // Show modal with animation
+  modal.style("display", "block");
+  
+  // Prevent body scrolling
+  d3.select("body").style("overflow", "hidden");
+}
+
+function closeHeatmapModal() {
+  let modal = d3.select("#heatmap-modal");
+  
+  // Hide modal
+  modal.style("display", "none");
+  
+  // Re-enable body scrolling
+  d3.select("body").style("overflow", "auto");
+  
+  // Clean up enlarged heatmap
+  enlargedHeatMap = null;
 }
 
 function updateBiasesUI(network: nn.Node[][]) {
@@ -865,6 +940,14 @@ function updateUI(firstStep = false) {
     data.heatmap.updateBackground(reduceMatrix(boundary[data.id], 10),
         state.discretize);
   });
+
+  // Update enlarged heatmap if modal is open
+  if (enlargedHeatMap) {
+    let selectedId = selectedNodeId != null ? selectedNodeId : nn.getOutputNode(network).id;
+    enlargedHeatMap.updateBackground(boundary[selectedId], state.discretize);
+    enlargedHeatMap.updatePoints(trainData);
+    enlargedHeatMap.updateTestPoints(state.showTestData ? testData : []);
+  }
 
   function zeroPad(n: number): string {
     let pad = "000000";
