@@ -508,32 +508,27 @@ g.column rect {
   margin-right: 0;
   width: 100%;
   display: block;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
   border: none;
-  background: rgba(158,158,158,.1);
+  background: #2E86DE;
   border-radius: 3px;
   padding: 5px;
   font-size: 12px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
   outline: none;
   transition: background 0.3s linear;
   cursor: pointer;
 }
 
 #main-part .basic-button:hover {
-  background: rgba(158,158,158,.3);
-  color: rgba(0, 0, 0, 0.6);
-}
-
-#main-part .basic-button:focus {
-  background: rgba(158,158,158,.4);
-  color: rgba(0, 0, 0, 0.7);
+  background: #1678d9;
+  color: rgb(255, 255, 255);
 }
 
 #main-part .basic-button:active {
-  background: rgba(158,158,158,.5);
-  color: rgba(0, 0, 0, 0.8);
+  background: #2E86DE;
+  color: rgba(255, 255, 255);
 }
 
 /* Features column */
@@ -886,7 +881,7 @@ footer .links a:hover {
 .mdl-button--fab.mdl-button--colored:active,
 .mdl-button--fab.mdl-button--colored:focus,
 .mdl-button--fab.mdl-button--colored:focus:not(:active) {
-    background: #183D4E;
+    background: #2E86DE;
 }
 
 /* Checkbox */
@@ -896,49 +891,49 @@ footer .links a:hover {
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
-  background-color: #183D4E;
+  background-color: #2E86DE;
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
-  background-color: #183D4E;
+  background-color: #2E86DE;
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__box-outline {
-  border-color: #183D4E;
+  border-color: #2E86DE;
 }
 
 .mdl-checkbox__ripple-container .mdl-ripple {
-  background-color: #183D4E;
+  background-color: #2E86DE;
 }
 
 /* Slider */
 
 #main-part .mdl-slider.is-upgraded {
-  color: #183D4E;
+  color: #2E86DE;
 }
 
 #main-part .mdl-slider__background-lower {
-  background-color: #183D4E;
+  background-color: #2E86DE;
 }
 
 #main-part .mdl-slider.is-upgraded::-webkit-slider-thumb {
-  background-color: #183D4E;
+  background-color: #2E86DE;
 }
 
 #main-part .mdl-slider.is-upgraded::-moz-range-thumb {
-  background-color: #183D4E;
+  background-color: #2E86DE;
 }
 
 #main-part .mdl-slider.is-upgraded::-ms-thumb {
-  background-color: #183D4E;
+  background-color: #2E86DE;
 }
 
 #main-part .mdl-slider.is-upgraded.is-lowest-value::-webkit-slider-thumb {
-  border-color: #183D4E;
+  border-color: #2E86DE;
 }
 
 #main-part .mdl-slider.is-upgraded.is-lowest-value::-moz-range-thumb {
-  border-color: #183D4E;
+  border-color: #2E86DE;
 }
 /* Keep grey focus circle for non-start values */
 #main-part .mdl-slider.is-upgraded:focus:not(:active)::-webkit-slider-thumb {
@@ -949,7 +944,7 @@ footer .links a:hover {
 
 /* Makes the "Epoch" number appear below its label */
 #top-controls .control .value {
-  margin-top: 5px;
+  margin-top: 8px;
   display: block;
 }
 
@@ -1042,7 +1037,7 @@ footer .links a:hover {
 
 /* Sidebar styles */
 #top-controls {
-  flex: 0 0 260px; /* Do not grow, do not shrink, base width of 260px */
+  flex: 0 0 200px; /* Do not grow, do not shrink, base width of 260px */
   height: 100vh; /* Full viewport height */
   position: sticky; /* Stick to the top of the viewport on scroll */
   top: 0;
@@ -1056,8 +1051,8 @@ footer .links a:hover {
 /* Main content area that will contain the header, network, and article */
 #mine-main-content {
   flex: 1 1 auto; /* Allow this container to grow and shrink */
-  width: calc(100% - 260px); /* Take up remaining space */
-  height: 100vh;
+  width: calc(100% - 200px); /* Take up remaining space */
+  height: auto;
   overflow-y: auto; /* Allow main content to scroll independently */
 }
 
@@ -1085,9 +1080,9 @@ footer .links a:hover {
 /* Center the play/pause/step buttons and give them space */
 #top-controls .timeline-controls {
   justify-content: center;
-  margin-right: 0;
+  margin-left: 35px; /* Center the controls */
   margin-bottom: 20px;
-  width: 100%;
+  width: 70%;
 }
 
 /* Style each control group (Epoch, Learning Rate, etc.) */
@@ -1104,5 +1099,6 @@ footer .links a:hover {
 }
 
 #top-controls .control .value {
-  font-size: 22px; /* Make values like the epoch number stand out */
+  font-size: 45px; /* Make values like the epoch number stand out */
+  margin-bottom: 9px;
 }
