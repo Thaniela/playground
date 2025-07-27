@@ -1178,7 +1178,7 @@ input[type="range"]::-moz-range-thumb {
 /* CSS Changes */
 #mine-main-content .column.data h4 {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     text-transform: uppercase;
     
 }
