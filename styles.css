@@ -159,11 +159,14 @@ body {
 /* Header */
 
 header {
-  background-color: #2E86DE;
+  background-color: #E78AC3;
   color: white;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  position: relative;
+  position: sticky;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
 }
 
 header h1 {
@@ -358,10 +361,10 @@ header h1 .optional {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
+  gap: 100px;
   margin-top: 30px;
   margin-bottom: 50px;
+  margin-left: 70px;
   padding-top: 2px;
   position: relative;
 }
@@ -462,8 +465,8 @@ g.column rect {
 .data.column .dataset {
   position: relative;
   float: left;
-  width: 34px;
-  height: 34px;
+  width: 50px;
+  height: 50px;
   margin: 0 14px 14px 0;
 }
 
@@ -517,32 +520,27 @@ g.column rect {
   margin-right: 0;
   width: 100%;
   display: block;
-  color: rgba(255, 255, 255, 0.97);
+  color: rgb(255, 255, 255);
   border: none;
-  background: #2E86DE;
+  background: #E78AC3;
   border-radius: 3px;
   padding: 5px;
   font-size: 12px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
   outline: none;
   transition: background 0.3s linear;
   cursor: pointer;
 }
 
 .basic-button:hover {
-  background: #2d8ae7;
-  color: rgba(255, 255, 255, 0.97);
-}
-
-.basic-button:focus {
-  background: #2d8ae7;
-  color: rgba(255, 255, 255, 0.97);
+  background: #e75eb3;
+  color: rgb(255, 255, 255);
 }
 
 .basic-button:active {
-  background:#1f7ddb;
-  color: rgba(255, 255, 255, 0.97);
+  background: #e75eb3;
+  color: rgba(255, 255, 255);
 }
 
 /* Features column */
@@ -895,7 +893,7 @@ footer .links a:hover {
 .mdl-button--fab.mdl-button--colored:active,
 .mdl-button--fab.mdl-button--colored:focus,
 .mdl-button--fab.mdl-button--colored:focus:not(:active) {
-    background: #2E86DE;
+    background: #E78AC3;
 }
 
 /* Checkbox */
@@ -905,60 +903,118 @@ footer .links a:hover {
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
-  background-color: #2E86DE;
+  background-color: #E78AC3;
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
-  background-color: #2E86DE;
+  background-color: #E78AC3;
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__box-outline {
-  border-color: #2E86DE;
+  border-color: #E78AC3;
 }
 
 .mdl-checkbox__ripple-container .mdl-ripple {
-  background-color: #2E86DE;
+  background-color: #E78AC3;
 }
 
 /* Slider */
 
 #main-part .mdl-slider.is-upgraded {
-  color: #2E86DE;
+  color: #E78AC3 !important;
 }
 
 #main-part .mdl-slider__background-lower {
-  background-color: #2E86DE;
+  background-color: #E78AC3 !important;
 }
 
 #main-part .mdl-slider.is-upgraded::-webkit-slider-thumb {
-  background-color: #2E86DE;
+  background-color: #E78AC3 !important;
+  border: 2px solid #E78AC3 !important;
 }
 
 #main-part .mdl-slider.is-upgraded::-moz-range-thumb {
-  background-color: #2E86DE;
+  background-color: #E78AC3 !important;
+  border: 2px solid #E78AC3 !important;
 }
 
 #main-part .mdl-slider.is-upgraded::-ms-thumb {
-  background-color: #2E86DE;
+  background-color: #E78AC3 !important;
+  border: 2px solid #E78AC3 !important;
 }
 
 #main-part .mdl-slider.is-upgraded.is-lowest-value::-webkit-slider-thumb {
-  border-color: #2E86DE;
+  border-color: #E78AC3 !important;
+  background-color: #E78AC3 !important;
 }
 
 #main-part .mdl-slider.is-upgraded.is-lowest-value::-moz-range-thumb {
-  border-color: #2E86DE;
+  border-color: #E78AC3 !important;
+  background-color: #E78AC3 !important;
 }
-/* Keep grey focus circle for non-start values */
+
+/* Additional slider track styling */
+#main-part .mdl-slider__background-upper {
+  background-color: rgba(231, 138, 195, 0.2) !important;
+}
+
+/* Slider container styling */
+#main-part .mdl-slider {
+  background-color: rgba(231, 138, 195, 0.2) !important;
+}
+
+/* Focus state for slider thumb */
 #main-part .mdl-slider.is-upgraded:focus:not(:active)::-webkit-slider-thumb {
-  box-shadow: 0 0 0 10px rgba(0,0,0, 0.12);
+  box-shadow: 0 0 0 10px rgba(231, 138, 195, 0.2) !important;
+}
+
+#main-part .mdl-slider.is-upgraded:focus:not(:active)::-moz-range-thumb {
+  box-shadow: 0 0 0 10px rgba(231, 138, 195, 0.2) !important;
+}
+
+/* Additional Material Design Lite overrides for sliders */
+.mdl-slider.is-upgraded {
+  color: #E78AC3 !important;
+}
+
+.mdl-slider__background-lower {
+  background: #E78AC3 !important;
+}
+
+.mdl-slider.is-upgraded::-webkit-slider-thumb {
+  background: #E78AC3 !important;
+}
+
+.mdl-slider.is-upgraded::-moz-range-thumb {
+  background: #E78AC3 !important;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background-color: #E78AC3 !important;
+  border: 2px solid #E78AC3 !important;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background-color: #E78AC3 !important;
+  border: 2px solid #E78AC3 !important;
+}
+
+/* Override any blue colors from MDL */
+.mdl-slider.is-upgraded.is-lowest-value::-webkit-slider-thumb {
+  border: 2px solid #E78AC3 !important;
+  background: transparent !important;
+}
+
+.mdl-slider.is-upgraded.is-lowest-value::-moz-range-thumb {
+  border: 2px solid #E78AC3 !important;
+  background: transparent !important;
 }
 
 /* --- Final Tooltip and Control Styles --- */
 
 /* Makes the "Epoch" number appear below its label */
 #top-controls .control .value {
-  margin-top: 10px;
+  margin-top: 8px;
   display: block;
 }
 
@@ -988,14 +1044,16 @@ footer .links a:hover {
 .tooltip-icon::after {
   content: attr(data-tooltip);
   position: absolute;
-  /* Increased z-index to ensure it appears on top */
-  z-index: 100;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-50%);
+  z-index: 1000;
+  
+  /* Position to the right of the icon */
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  margin-left: 10px; /* Space between arrow and tooltip box */
 
   /* Visual styling */
-  width: 200px;
+  width: 150px;
   background-color: #333;
   color: #fff;
   font-family: "Helvetica", "Arial", sans-serif;
@@ -1006,7 +1064,6 @@ footer .links a:hover {
   text-transform: none;
   padding: 8px 10px;
   border-radius: 6px;
-  /* Explicitly allow text to wrap to multiple lines */
   white-space: normal;
 
   /* Hide by default */
@@ -1019,16 +1076,17 @@ footer .links a:hover {
 .tooltip-icon::before {
   content: '';
   position: absolute;
-  z-index: 100;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: -10px;
+  z-index: 1000;
 
-  /* Creates the triangle */
+  /* Position between the icon and the tooltip box */
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  
+  /* Creates the triangle pointing left */
   border-width: 5px;
   border-style: solid;
-  border-color: #333 transparent transparent transparent;
+  border-color: transparent #333 transparent transparent;
 
   /* Hide by default */
   opacity: 0;
@@ -1043,37 +1101,273 @@ footer .links a:hover {
   visibility: visible;
 }
 
-/* --- My new styles for the data card --- */
-
-/* Overrides default column behavior to create a card-like container */
-.data.column {
-  width: auto; /* Remove fixed percentage width */
-  background-color: white;
-  border: 1px solid #ddd;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 30px; /* Add space between this card and the features section */
-}
-
-/* Container for the two-column layout */
-.mine-data-card-container {
+/* Main container for the two-column layout */
+#mine-container {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
 }
 
-/* Defines the left column (datasets) */
+/* Sidebar styles */
+#top-controls {
+  flex: 0 0 200px; /* Do not grow, do not shrink, base width of 260px */
+  height: calc(100vh-96.25px); /* Full viewport height */
+  position: sticky; /* Stick to the top of the viewport on scroll */
+  top: 96.25px;
+  border-bottom: none; /* Remove original bottom border */
+  border-right: 1px solid #ddd; /* Add a right border to separate from content */
+  box-shadow: none; /* Remove original shadow */
+  overflow-y: auto; /* Allow sidebar to scroll if content is too tall */
+  padding: 24px 20px;
+}
+
+/* Main content area that will contain the header, network, and article */
+#mine-main-content {
+  flex: 1 1 auto; /* Allow this container to grow and shrink */
+  width: calc(100% - 200px); /* Take up remaining space */
+  height: auto;
+  overflow-y: auto; /* Allow main content to scroll independently */
+}
+
+/* Adjust the main content's inner containers to not have a conflicting margin */
+#mine-main-content header,
+#mine-main-content #main-part,
+#mine-main-content #article-text,
+#mine-main-content footer {
+  margin-left: 100px;
+}
+
+/* --- Sidebar Control Adjustments --- */
+
+/* Override the l--page class within the sidebar to fill the container */
+#top-controls .container.l--page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Stack controls vertically */
+  align-items: stretch; /* Make controls fill the width of the sidebar */
+  justify-content: flex-start;
+}
+
+/* Center the play/pause/step buttons and give them space */
+#top-controls .timeline-controls {
+  justify-content: center;
+  margin-left: 35px; /* Center the controls */
+  margin-bottom: 20px;
+  width: 70%;
+}
+
+/* Style each control group (Epoch, Learning Rate, etc.) */
+#top-controls .control {
+  max-width: none; /* Remove max-width constraint */
+  min-width: 0;
+  margin-left: 0; /* Remove left margin */
+  margin-top: 18px; /* Add vertical spacing between controls */
+}
+
+#top-controls .control .label,
+#top-controls .control label {
+  font-size: 14px; /* Slightly larger label for clarity */
+}
+
+#top-controls .control .value {
+  font-size: 45px; /* Make values like the epoch number stand out */
+  margin-bottom: 9px;
+}
+
+/* CSS Changes */
+#mine-main-content .column.data h4 {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    
+}
+/* --- Data Column Card Layout --- */
+.mine-data-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /*border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);*/
+  margin-top: 10px;
+}
+
 .mine-data-left {
-  flex-basis: 45%;
+  flex-basis: 48%;
+  padding-right: 15px;
+  border-right: 1px solid #eee;
 }
 
-/* Defines the right column (configurations) */
 .mine-data-right {
-  flex-basis: 45%;
+  flex-basis: 48%;
+  padding-left: 15px;
 }
 
-/* Minor adjustment for the sliders within the new layout */
+/* Adjust original data column to fit the new card layout */
+.data.column {
+  width: 60%; /* Increased width to accommodate the two columns */
+  margin-left: 100px;
+}
+
+
+/* Tweak the width of the dataset list to better fit the column */
+.data.column .dataset-list {
+  width: 100%;
+}
+
+/* Remove margin from individual datasets as the flexbox handles spacing */
+.data.column .dataset {
+  margin-right: 10px;
+}
+
+.data.column .dataset:nth-of-type(2n) {
+  margin-right: 10px;
+}
+
+.data.column .dataset:nth-of-type(3n) {
+  margin-right: 0;
+}
+
 #main-part .data.column p.slider {
-    margin: 0 0 20px 0;
+  margin: 0 0 20px 0; /* Remove negative margin */
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: 2% auto;
+  padding: 0;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  background: linear-gradient(135deg, #E78AC3, #A6D854);
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.close {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+}
+
+.modal-body {
+  padding: 25px;
+  text-align: center;
+  overflow-y: auto;
+  max-height: calc(90vh - 120px);
+}
+
+#heatmap-enlarged {
+  margin: 0 auto 20px;
+  display: inline-block;
+  cursor: default;
+}
+
+.modal-legend {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.legend-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 300;
+}
+
+#colormap-modal {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+/* Make original heatmap clickable */
+#heatmap {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#heatmap:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive modal */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    margin: 5% auto;
+    max-height: 85vh;
+  }
+  
+  .modal-header {
+    padding: 15px 20px;
+  }
+  
+  .modal-header h3 {
+    font-size: 18px;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
 }
