@@ -456,8 +456,8 @@ g.column rect {
 .data.column .dataset {
   position: relative;
   float: left;
-  width: 34px;
-  height: 34px;
+  width: 50px;
+  height: 50px;
   margin: 0 14px 14px 0;
 }
 
@@ -500,11 +500,11 @@ g.column rect {
   display: none;
 }
 
-#main-part .data.column p.slider {
+.data.column p.slider {
   margin: 0 -25px 20px;
 }
 
-#main-part .basic-button {
+.basic-button {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   margin-top: 25px;
   height: 34px;
@@ -524,12 +524,12 @@ g.column rect {
   cursor: pointer;
 }
 
-#main-part .basic-button:hover {
+.basic-button:hover {
   background: #1678d9;
   color: rgb(255, 255, 255);
 }
 
-#main-part .basic-button:active {
+.basic-button:active {
   background: #2E86DE;
   color: rgba(255, 255, 255);
 }
